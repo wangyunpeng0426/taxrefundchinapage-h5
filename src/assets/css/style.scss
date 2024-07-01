@@ -1,0 +1,3300 @@
+$white: #fff;
+$gray: #f6f6f6;
+$selectfontcolor: #333;
+$defaultfontcolor: #a4a6a5;
+
+$lightgray: #e4e4e4;
+
+// ----- 第二版颜色 -----
+
+$selectYellow: #ffd782;
+$normalPurple: #978be1;
+$selectPurple: #594ab1;
+
+// vant icon 在main.js中引用了css仍不显示 需要引入其他cnd字体文件
+@font-face {
+  font-weight: normal;
+  font-family: "vant-icon";
+  font-style: normal;
+  font-display: auto;
+  src: url("https://img01.yzcdn.cn/vant/vant-icon-84f687.woff2") format("woff2"),
+    url("https://img01.yzcdn.cn/vant/vant-icon-84f687.woff") format("woff"),
+    url("https://img01.yzcdn.cn/vant/vant-icon-84f687.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background: $gray;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica,
+    Segoe UI, Arial, Roboto, "PingFang SC", miui, "Hiragino Sans GB",
+    "Microsoft Yahei", sans-serif;
+}
+
+/* default - start */
+
+.mt-2 {
+  margin-top: 0.2rem;
+}
+
+.mt-5 {
+  margin-top: 0.5rem;
+}
+
+.mt-10 {
+  margin-top: 1rem;
+}
+
+.mt-15 {
+  margin-top: 1.5rem;
+}
+
+.mt-20 {
+  margin-top: 2rem;
+}
+
+.mb-5 {
+  margin-bottom: 0.5rem;
+}
+
+.plr-25 {
+  padding: 0 0.25rem;
+}
+
+.plr-4 {
+  padding: 0 0.4rem;
+}
+
+.font-purple {
+  color: $selectPurple;
+}
+
+.font-black {
+  color: $selectfontcolor;
+}
+
+.font-gray {
+  color: $defaultfontcolor;
+}
+
+.font-red {
+  color: #ff4949;
+}
+
+.border-gray {
+  .van-icon {
+    border-color: $defaultfontcolor !important;
+  }
+}
+
+.font-3 {
+  font-size: 0.3rem;
+}
+
+#app {
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  background: $gray;
+}
+
+.page {
+  background: $gray;
+  height: 100%;
+  width: 100%;
+  font-size: 0.25rem;
+  display: flex;
+  overflow-y: auto;
+}
+
+.no-full {
+  height: auto;
+  background: $gray;
+}
+
+.van-dialog {
+  border-radius: 5px;
+  .van-dialog__message {
+    word-wrap: break-word;
+    // word-break: keep-all;
+  }
+}
+
+.van-dialog__confirm,
+.van-dialog__confirm:active {
+  color: $selectPurple;
+}
+
+.van-picker__columns {
+  .van-picker-column__item--selected {
+    font-weight: bold;
+  }
+}
+
+.van-cell-group {
+  box-shadow: 0 0 6px $lightgray;
+}
+
+.van-circle__text {
+  color: #fff;
+}
+
+.van-popover__action {
+  width: 180px;
+}
+
+[class*="van-hairline"]::after {
+  border: none;
+}
+
+.van-hairline-unset--top-bottom::after {
+  position: absolute;
+  box-sizing: border-box;
+  content: " ";
+  pointer-events: none;
+  top: 0%;
+  right: -50%;
+  bottom: -50%;
+  left: -50%;
+  border: 0;
+  height: 1px;
+  // border-top: 1px solid #7e7e7e;
+  background: -webkit-linear-gradient(left, #fff -4%, #7e7e7e 50%, #fff 100%);
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+}
+.van-hairline-unset--top-bottom::before {
+  position: absolute;
+  box-sizing: border-box;
+  content: " ";
+  pointer-events: none;
+  top: 96%;
+  right: -50%;
+  bottom: -50%;
+  left: -50%;
+  border: 0;
+  height: 1px;
+  // border-bottom: 1px solid #7e7e7e;
+  background: -webkit-linear-gradient(left, #fff -4%, #7e7e7e 50%, #fff 100%);
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+}
+/* default - end */
+
+/* button - start */
+
+.btn {
+  width: 90%;
+  height: 1rem;
+  background-color: $selectPurple;
+  border-radius: 5px;
+  margin: 0 auto;
+  color: $white;
+  text-align: center;
+  line-height: 1rem;
+}
+
+.btn-m {
+  // display: inline-block;
+  // width: 43%;
+  // height: 1rem;
+  // color: $selectfontcolor;
+  // background-color: $selectYellow;
+  width: 43%;
+  height: auto;
+  display: flex;
+  color: #333;
+  background-color: #ffd782;
+  justify-content: center;
+  align-items: center;
+  padding: 0.29rem 0;
+  line-height: inherit;
+}
+
+.btn-m + .btn-m {
+  margin-left: 10px;
+  background-color: $selectPurple;
+  color: $white;
+}
+
+.btn-s {
+  flex: 1;
+}
+
+.btn-s + .btn-s {
+  margin-left: 10px;
+}
+
+/* button - end */
+
+/* button position - start */
+
+.btn-group {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  margin: 0.3rem 0 0.5rem 0;
+  .btn {
+    font-size: 0.3rem;
+    img {
+      position: relative;
+      top: 0.03rem;
+      height: 0.32rem;
+      width: 0.38rem;
+      margin-right: 0.15rem;
+    }
+  }
+}
+
+/* 页面空白部分较多 固定在底部 */
+.btn-group-bottom {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background: #f6f6f6;
+  left: 0;
+  height: 2.62rem;
+}
+
+/* 页面内容较多 需要滚动时 跟随内容在最后 */
+.btn-group-follow {
+  width: 100%;
+  padding: 0.3rem 0;
+}
+
+.logo-icbc {
+  width: 100%;
+  position: relative;
+  top: 10px;
+  text-align: center;
+  img {
+    width: 80%;
+    height: 0.75rem;
+    margin: 0 auto;
+  }
+}
+
+/* button position - end */
+
+/* 签名页国家弹层 */
+.country-model {
+  .country-logo {
+    width: 0.5rem;
+    height: auto;
+  }
+  .img-class {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      margin-right: 5px;
+    }
+    span + span {
+      margin-left: 5px;
+    }
+  }
+}
+
+/* 没网提示 */
+.nowifi {
+  .block {
+    padding: 0.5rem 0.5rem 0 0.5rem;
+    text-align: center;
+    img {
+      width: 35%;
+    }
+  }
+}
+
+/* index - start */
+
+.index {
+  width: 100%;
+  text-align: center;
+  padding: 0.3rem;
+  display: flex;
+  justify-content: center;
+  .content {
+    position: absolute;
+    top: 3rem;
+    img {
+      width: 50%;
+    }
+    p {
+      font-size: 0.3rem;
+      margin-top: 0.3rem;
+    }
+  }
+}
+
+/* index - end */
+
+/* header - start */
+
+.header {
+  width: 100%;
+  min-height: 2.3rem;
+  position: relative;
+  background-image: url(../image/header-1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-bottom-right-radius: 0.15rem;
+  border-bottom-left-radius: 0.15rem;
+
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 0.25rem;
+  padding: 0 0.25rem 0.25rem 0.25rem;
+  .step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.45rem 0 0.4rem 0;
+    color: #fff;
+    .step-block {
+      height: 1rem;
+      width: 1rem;
+      margin: 0 auto;
+      background-color: $normalPurple;
+      border-radius: 5px;
+      img {
+        position: relative;
+        top: 30%;
+        width: 55%;
+      }
+      .img-receipt {
+        top: 25%;
+        width: 38%;
+      }
+      .img-sign {
+        top: 32%;
+        width: 44%;
+      }
+    }
+    .select-before {
+      background-color: $selectYellow;
+    }
+    .select {
+      background-color: $selectYellow;
+      border: 2px solid #fff;
+    }
+    .step-block + span {
+      margin-top: 0.1rem;
+    }
+    span {
+      position: relative;
+      top: 0.1rem;
+      width: 1.5rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+  .point {
+    display: flex;
+    height: 1rem;
+    align-items: center;
+    margin: 0.45rem 0 0.4rem 0;
+    img {
+      height: 4px;
+      width: auto;
+    }
+  }
+}
+
+/* header - end */
+
+/* passport - start */
+
+.passport {
+  width: 100%;
+  height: 100%;
+  .content-1 {
+    .btn-top {
+      .btn-group {
+        margin: 0.3rem auto 0 auto;
+        .van-tabs {
+          width: 100%;
+          .van-tab__text {
+            padding: 0 0.2rem;
+          }
+        }
+        /* 自定义修改tab */
+        .van-tabs--card > .van-tabs__wrap {
+          min-height: 0.8rem;
+          height: auto;
+        }
+        .van-tabs__nav {
+          background-color: transparent;
+        }
+        .van-tabs__nav--card {
+          min-height: 0.8rem;
+          height: auto;
+          line-height: 0.8rem;
+          border: none;
+          .van-tab + .van-tab {
+            margin-left: 0.2rem;
+          }
+        }
+        .van-tabs__nav--card .van-tab {
+          background-color: #fff;
+          color: $selectfontcolor;
+          border-radius: 5px;
+          border: transparent;
+          font-size: 0.22rem;
+          line-height: 15px;
+          .van-tab__text--ellipsis {
+            display: inline;
+          }
+        }
+        .van-tabs__nav--card .van-tab.van-tab--active {
+          background-color: $selectPurple;
+          color: #fff;
+        }
+      }
+    }
+    .content-top {
+      text-align: center;
+      img {
+        width: 80%;
+        margin: 0.3rem auto;
+      }
+    }
+    .content-tip {
+      position: relative;
+      bottom: 2.7rem;
+      color: #fff;
+      font-size: 0.3rem;
+      text-align: center;
+    }
+    .content-bottom {
+      position: relative;
+      bottom: 0.5rem;
+      width: 100%;
+      padding: 0.25rem 0.3rem;
+      color: $defaultfontcolor;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .van-popover__wrapper {
+      width: 100%;
+    }
+  }
+  .content-2 {
+    .content-top {
+      color: $selectPurple;
+      text-align: center;
+      margin: 0.35rem 0;
+    }
+    .content-bottom {
+      width: 85%;
+      margin: 0 auto 4rem auto;
+      .van-cell-group {
+        border-radius: 5px;
+        .van-cell {
+          border-radius: 5px;
+          .van-field__label {
+            color: $defaultfontcolor;
+          }
+          .van-icon {
+            // color: #ef8eb1;
+            color: $selectYellow;
+          }
+        }
+      }
+      .van-cell-group + .van-cell-group {
+        margin-top: 0.15rem;
+      }
+    }
+    .btn-group-follow {
+      position: relative;
+      top: 1%;
+    }
+  }
+
+  /* lang 弹层 */
+  .lang {
+    width: 100%;
+    height: 100%;
+    padding: 0.4rem;
+    background: $gray;
+    .van-radio-group {
+      width: 100%;
+      margin: 0 auto;
+      .van-cell-group {
+        border-radius: 5px;
+        .van-cell {
+          border-radius: 5px;
+          padding: 14px 20px;
+          .van-cell__title {
+            color: $defaultfontcolor;
+          }
+        }
+        .van-radio__icon--checked .van-icon {
+          color: #fff;
+          background-color: $selectPurple;
+          border-color: $selectPurple;
+        }
+      }
+      .van-cell-group + .van-cell-group {
+        margin-top: 0.2rem;
+      }
+      img {
+        position: relative;
+        bottom: 0.03rem;
+        width: 0.47rem;
+        height: 0.32rem;
+        // background: red;
+        margin-right: 0.25rem;
+        vertical-align: middle;
+        border: 1px solid $gray;
+      }
+    }
+    .agree {
+      margin: 30px auto 0 auto;
+      .van-checkbox {
+        justify-content: center;
+        .van-checkbox__icon {
+          font-size: 14px;
+        }
+        .van-checkbox__label {
+          color: $defaultfontcolor;
+          font-size: 14px;
+        }
+      }
+      .agree-link {
+        color: $selectPurple;
+      }
+    }
+    .btn-group {
+      position: relative;
+      top: 10px;
+      padding: 0;
+      margin-bottom: 0.2rem;
+      margin-top: 0;
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+  .van-dialog__header {
+    font-size: 24px;
+    padding-top: 10px;
+    .dialog-agreement-title {
+      font-size: 16px;
+    }
+    .dialog-close-icon {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      color: $defaultfontcolor;
+    }
+  }
+  .agreement-dialog {
+    background-color: #fff;
+    .agreement {
+      width: 100%;
+      height: 8.5rem;
+      color: $selectfontcolor;
+      .agreement-content {
+        height: 80%;
+      }
+    }
+  }
+
+  /* login 弹层 */
+  .login-pop {
+    width: 80%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    .content {
+      padding: 0.2rem;
+      height: auto !important;
+      .content-top {
+        margin-top: 1rem;
+        .title {
+          font-size: 0.5rem;
+          text-align: center;
+        }
+        .radio {
+          margin: 0.5rem 0;
+          display: flex;
+          justify-content: center;
+          .van-radio-group {
+            text-align: center;
+            margin: 0 auto;
+            width: 65%;
+            justify-content: space-between;
+            .van-radio__label {
+              color: $defaultfontcolor;
+            }
+            .van-radio__icon .van-icon {
+              border: 1px solid $selectPurple;
+            }
+          }
+        }
+        .input {
+          .tel {
+            padding: 0 0.3rem;
+            .tel-group {
+              display: flex;
+              align-items: center;
+              .van-cell {
+                padding: 10px;
+              }
+              .tel-country {
+                width: 65%;
+              }
+              .tel-country::after {
+                border-bottom: none;
+              }
+              .van-field__left-icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .van-icon {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  img {
+                    width: 0.47rem;
+                    height: 0.32rem;
+                    margin-right: 0.25rem;
+                    vertical-align: middle;
+                  }
+                }
+              }
+            }
+            .line {
+              margin: 0;
+              display: inline-block;
+              height: 0.4rem;
+              width: 2px;
+              vertical-align: middle;
+              position: relative;
+              background: $defaultfontcolor;
+            }
+            .input-label {
+              margin: 0.4rem auto 0.2rem auto;
+              color: $defaultfontcolor;
+              font-size: 0.26rem;
+            }
+            .van-cell-group {
+              border-radius: 5px;
+              border: 1px solid transparent;
+              box-shadow: 0 0 6px $lightgray;
+            }
+            .code-group {
+              display: flex;
+              box-shadow: none;
+              background: transparent;
+              .van-cell {
+                flex: 1;
+                margin-right: 0.2rem;
+                border-radius: 5px;
+                box-shadow: 0 0 6px $lightgray;
+              }
+              .van-button {
+                flex: 1;
+                border: 1px solid $selectYellow;
+                color: $selectfontcolor;
+                background-color: $selectYellow;
+                border-radius: 5px;
+                box-shadow: 0 0 6px $lightgray;
+              }
+            }
+          }
+          .tel + .tel {
+            margin-top: 0.2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* passport - end */
+
+/* bankcard - start */
+
+.bankcard {
+  width: 100%;
+  height: 100%;
+  .content-1 {
+    .content-bottom {
+      width: 85%;
+      margin: 0 auto;
+      .input-label {
+        margin: 0.5rem auto 0.2rem auto;
+        color: $defaultfontcolor;
+        font-size: 0.22rem;
+      }
+      .van-cell-group {
+        border-radius: 5px;
+        .van-cell {
+          border-radius: 5px;
+          .van-icon.van-icon-photograph {
+            font-size: 18px;
+            padding-top: 3px;
+          }
+        }
+        .van-radio__icon--checked .van-icon {
+          color: #fff;
+          background-color: $selectPurple;
+          border-color: $selectPurple;
+        }
+      }
+      .van-cell-group + .van-cell-group {
+        margin-top: 0.2rem;
+      }
+    }
+    .logo-group {
+      margin-top: 0.5rem;
+      margin-bottom: 5.5rem;
+      text-align: center;
+      padding-right: 10px;
+      img + img {
+        margin-left: 0.3rem;
+      }
+    }
+  }
+  .content-2 {
+    .content-top {
+      display: flex;
+      justify-content: space-between;
+      width: 85%;
+      margin: 0 auto;
+      padding-top: 0.5rem;
+      .left {
+        .bank {
+          font-size: 0.35rem;
+        }
+        .cardNo {
+          font-size: 0.3rem;
+        }
+      }
+      .right {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        p {
+          text-align: right;
+        }
+        img {
+          display: inline-block;
+          width: 1rem;
+        }
+        .cardBin {
+          color: $defaultfontcolor;
+          font-size: 0.22rem;
+          white-space: nowrap;
+        }
+      }
+    }
+    .content-bottom {
+      width: 85%;
+      margin: 0.5rem auto 2.5rem auto;
+      .input-label {
+        margin: 0.5rem auto 0.2rem auto;
+        color: $defaultfontcolor;
+        font-size: 0.22rem;
+      }
+      .van-cell-group {
+        border-radius: 5px;
+        .input_validity-icon {
+          // color: $selectYellow;
+          // background-color: $selectfontcolor;
+          border-radius: 10px;
+        }
+        .van-cell {
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+  .content-3 {
+    .content-top {
+      .btn-group {
+        .ghost {
+          height: 0.81rem;
+          line-height: 0.81rem;
+          border: 1px dashed $defaultfontcolor;
+          background-color: transparent;
+          background-image: none;
+          color: $selectfontcolor;
+          font-size: 0.24rem;
+        }
+      }
+    }
+    .content-bottom {
+      .card-list {
+        padding: 0 0.25rem;
+        .card {
+          width: 90%;
+          border-radius: 5px;
+          margin: 0 auto;
+          .van-cell {
+            border-radius: 5px;
+          }
+          .title {
+            display: flex;
+            margin-top: 0.15rem;
+            .title-left {
+              flex: 1;
+              display: flex;
+              align-items: center;
+              margin-right: 0.3rem;
+              img {
+                width: 0.9rem;
+              }
+            }
+            .title-right {
+              flex: 5;
+              display: flex;
+              flex-direction: column;
+              .title-right-top {
+                display: flex;
+                justify-content: space-between;
+                .card-type {
+                  font-size: 0.24rem;
+                }
+              }
+              .title-right-bottom {
+                letter-spacing: 1.5px;
+                font-size: 0.34rem;
+              }
+            }
+          }
+          .van-divider {
+            margin: 0.25rem 0;
+            border-color: $defaultfontcolor;
+          }
+          .balance {
+            display: flex;
+            font-size: 0.3rem;
+            color: $defaultfontcolor;
+            .balance_label {
+              flex: 1;
+            }
+            .balance_number {
+              width: auto;
+              text-align: right;
+              display: flex;
+              align-items: center;
+            }
+          }
+          .label {
+            display: flex;
+            flex-direction: column;
+            margin: 0.25rem 0;
+            height: 0.25rem;
+            .card-unlink {
+              color: $defaultfontcolor;
+              font-size: 0.3rem;
+              width: 80%;
+              img {
+                width: 0.24rem;
+                height: 0.24rem;
+                margin-right: 5px;
+              }
+            }
+          }
+          .van-radio {
+            position: absolute;
+            bottom: 13%;
+            right: 0.3rem;
+            .van-radio__icon .van-icon {
+              border: 1px solid $selectPurple;
+            }
+            .van-radio__icon--checked .van-icon {
+              background-color: $selectPurple;
+            }
+          }
+        }
+        .card + .card {
+          margin-top: 0.2rem;
+        }
+        .select-border {
+          border: 2px solid $selectPurple;
+        }
+
+        .select-border:before {
+          font: normal normal normal 14px/1 vant-icon;
+          // font-family: "vant-icon";
+          content: "\F0C8";
+          width: 21px;
+          height: 21px;
+          line-height: 21px;
+          background-color: $selectPurple;
+          color: $white;
+          position: absolute;
+          right: -1px;
+          top: -1px;
+          z-index: 1;
+          border-start-end-radius: 5px;
+          border-end-start-radius: 5px;
+          text-align: center;
+          padding-top: 1px;
+        }
+      }
+    }
+  }
+  .dialog-card {
+    padding: 0.5rem;
+    font-size: 0.24rem;
+    text-align: center;
+
+    .content {
+      img {
+        width: 90%;
+      }
+      .title {
+        margin: 0.2rem 0 0.35rem 0;
+        word-wrap: break-word;
+        word-break: keep-all;
+      }
+      .bottom-content {
+        margin: 0.2rem 0;
+      }
+    }
+    .btn-group {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* bankcard - end */
+
+/* receipt - start */
+
+.receipt {
+  width: 100%;
+  height: 100%;
+  .content-1 {
+    padding: 0 0.25rem;
+    .content-top {
+      text-align: center;
+      padding: 0 0.25rem;
+      img {
+        width: 100%;
+        margin: 0.3rem auto 0 auto;
+      }
+    }
+    .content-tip {
+      position: relative;
+      bottom: 2.6rem;
+      color: #fff;
+      font-size: 0.3rem;
+      text-align: center;
+    }
+    .content-middle {
+      margin-bottom: 0.3rem;
+      padding: 0.5rem 0.25rem 0 0.25rem;
+      position: relative;
+      bottom: 0.1rem;
+      .van-cell {
+        border-radius: 5px;
+        box-shadow: 0 0 6px $lightgray;
+        .van-cell__title {
+          font-size: 0.2rem;
+        }
+        .van-cell__value {
+          font-size: 0.26rem;
+          color: $selectfontcolor;
+        }
+      }
+    }
+    .content-bottom {
+      padding: 0 0.15rem;
+      margin: 0 auto;
+      min-height: 5rem;
+      text-align: center;
+      color: $defaultfontcolor;
+      position: relative;
+      bottom: 0.1rem;
+      .grid {
+        .van-grid {
+          .van-grid-item.default {
+            .van-grid-item__content {
+              border-radius: 5px;
+              height: 2.64rem;
+              padding: 0.35rem 0.44rem;
+              flex-direction: column;
+              justify-content: space-between;
+              box-shadow: 0 0 6px $lightgray;
+              .grid-top {
+                display: block;
+                width: 100%;
+                font-size: 0.24rem;
+                text-align: left;
+                color: $selectfontcolor;
+              }
+              .grid-middle {
+                display: block;
+                width: 100%;
+                font-size: 0.32rem;
+                text-align: left;
+                color: $selectfontcolor;
+              }
+              .grid-bottom {
+                display: flex;
+                width: 100%;
+                flex-direction: row;
+                justify-content: space-between;
+                img {
+                  width: 0.26rem;
+                }
+                .van-icon {
+                  position: relative;
+                  top: 3px;
+                  margin-left: 2px;
+                  font-size: 16px;
+                }
+              }
+            }
+          }
+          .van-grid-item.blank {
+            .van-grid-item__content {
+              height: 2.64rem;
+              border: 1px $defaultfontcolor dashed;
+              background-color: transparent;
+              color: $selectfontcolor;
+              border-radius: 5px;
+              label {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .content-2 {
+    padding: 0 0.25rem;
+    .content-top {
+      text-align: center;
+      padding: 0 0.25rem;
+      img {
+        width: 100%;
+        margin: 0.3rem auto 0 auto;
+      }
+    }
+    .content-tip {
+      position: relative;
+      bottom: 2.6rem;
+      color: #fff;
+      font-size: 0.3rem;
+      text-align: center;
+    }
+    .content-middle {
+      margin-bottom: 0.3rem;
+      padding: 0 0.25rem;
+      position: relative;
+      bottom: 0.1rem;
+      .van-cell {
+        border-radius: 5px;
+        box-shadow: 0 0 6px $lightgray;
+        .van-cell__title {
+          font-size: 0.2rem;
+        }
+        .van-cell__value {
+          font-size: 0.26rem;
+          color: $selectfontcolor;
+        }
+      }
+    }
+    .content-bottom {
+      padding: 0 0.15rem;
+      margin: 0 auto;
+      text-align: center;
+      color: $defaultfontcolor;
+      position: relative;
+      bottom: 0.1rem;
+      .grid {
+        .van-grid {
+          .van-grid-item.default {
+            .van-grid-item__content {
+              border-radius: 5px;
+              height: 2.64rem;
+              padding: 0.35rem 0.44rem;
+              flex-direction: column;
+              justify-content: space-between;
+              box-shadow: 0 0 6px $lightgray;
+              .grid-top {
+                display: block;
+                width: 100%;
+                font-size: 0.24rem;
+                text-align: left;
+                color: $selectfontcolor;
+              }
+              .grid-middle {
+                display: block;
+                width: 100%;
+                font-size: 0.32rem;
+                text-align: left;
+                color: $selectfontcolor;
+              }
+              .grid-bottom {
+                display: flex;
+                width: 100%;
+                flex-direction: row;
+                justify-content: space-between;
+                img {
+                  width: 0.26rem;
+                }
+                .van-icon {
+                  position: relative;
+                  top: 3px;
+                  margin-left: 2px;
+                  font-size: 16px;
+                }
+              }
+            }
+          }
+          .van-grid-item.blank {
+            .van-grid-item__content {
+              height: 2.64rem;
+              border: 1px $defaultfontcolor dashed;
+              background-color: transparent;
+              color: $selectfontcolor;
+              border-radius: 5px;
+              label {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .content-3 {
+    .header {
+      background-image: none;
+    }
+    .content-top {
+      width: 100%;
+      height: 5.2rem;
+      background-image: url(../image/header-3.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      // background-attachment: fixed;
+      background-size: cover;
+      border-bottom-right-radius: 0.15rem;
+      border-bottom-left-radius: 0.15rem;
+      .header {
+        background-color: transparent;
+      }
+      .content-info {
+        color: #fff;
+        padding: 0.1rem 0.45rem;
+        .info-name,
+        .info-num {
+          font-size: 0.36rem;
+        }
+        .info-address {
+          font-size: 0.24rem;
+          .van-icon {
+            margin-right: 2px;
+          }
+        }
+        p + p {
+          margin-top: 0.1rem;
+        }
+      }
+    }
+    .content-bottom {
+      width: 100%;
+      // position: relative;
+      // bottom: 1.25rem;
+      position: absolute;
+      top: 4.3rem;
+      padding: 0.25rem;
+      .block-title {
+        width: 90%;
+        margin: 0.5rem auto 0.2rem auto;
+        font-size: 0.24rem;
+        color: $selectfontcolor;
+      }
+      .block-1 {
+        .card {
+          width: 90%;
+          border-radius: 5px;
+          margin: 0 auto;
+          .van-cell {
+            border-radius: 5px;
+          }
+          .title {
+            display: flex;
+            margin-top: 0.15rem;
+            .title-left {
+              flex: 1;
+              display: flex;
+              align-items: center;
+              margin-right: 0.3rem;
+              img {
+                width: 0.9rem;
+              }
+            }
+            .title-right {
+              flex: 5;
+              display: flex;
+              flex-direction: column;
+              .title-right-top {
+                display: flex;
+                justify-content: space-between;
+                .card-type {
+                  font-size: 0.24rem;
+                }
+              }
+              .title-right-bottom {
+                letter-spacing: 1.5px;
+                font-size: 0.34rem;
+              }
+            }
+          }
+          .van-divider {
+            margin: 0.25rem 0;
+            border-color: $defaultfontcolor;
+          }
+          .label {
+            display: flex;
+            flex-direction: column;
+            margin: 0.25rem 0;
+            height: 0.25rem;
+            .card-tip {
+              color: $defaultfontcolor;
+              font-size: 0.2rem;
+              text-align: center;
+            }
+          }
+        }
+      }
+      .block-2,
+      .block-3 {
+        .card {
+          width: 90%;
+          border-radius: 5px;
+          margin: 0 auto;
+          .van-cell {
+            border-radius: 5px;
+            padding: 10px;
+          }
+          .title {
+            .card-tip {
+              display: block;
+              font-size: 0.24rem;
+              text-align: left;
+              .van-cell {
+                color: $defaultfontcolor;
+                .van-cell__right-icon {
+                  position: relative;
+                  top: 12px;
+                }
+              }
+            }
+            .money-num {
+              color: $selectPurple;
+              font-size: 0.36rem;
+            }
+            .van-cell.van-collapse-item__title {
+              padding: 0 0.1rem;
+            }
+            .van-collapse-item__wrapper {
+              .van-collapse-item__content {
+                // padding: 0.1rem 0.2rem;
+                .card-row {
+                  font-size: 0.24rem;
+                  .font-black {
+                    display: inline-block;
+                    font-size: 0.2rem;
+                    margin: 5px 0;
+                    width: auto;
+                  }
+                  .font-black.sum {
+                    background-color: #eeeeee;
+                    border-radius: 5px;
+                    padding: 3px 7px;
+                  }
+                }
+                .card-row + .card-row {
+                  margin-top: 0.1rem;
+                  padding: 0.2rem 0;
+                  border-top: 1px solid $lightgray;
+                }
+              }
+            }
+          }
+        }
+      }
+      .block-cash {
+        .guarantee-amount {
+          width: 90%;
+          margin: 0 auto;
+          padding: 10px;
+          box-sizing: border-box;
+          font-family: "微软雅黑", sans-serif;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 80px;
+          .amount {
+            font-family: "微软雅黑 Bold", "微软雅黑 Regular", "微软雅黑",
+              sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+  .content-4 {
+    .header {
+      background-image: none;
+    }
+    .content-top {
+      width: 100%;
+      height: 2.8rem;
+      background-image: url(../image/header-3.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      // background-attachment: fixed;
+      background-size: cover;
+      border-bottom-right-radius: 0.15rem;
+      border-bottom-left-radius: 0.15rem;
+      .header {
+        background-color: transparent;
+      }
+      .content-info {
+        color: #fff;
+        padding: 0.35rem 0.45rem;
+        .info-name,
+        .info-num {
+          font-size: 0.36rem;
+        }
+        .info-address {
+          font-size: 0.24rem;
+          .van-icon {
+            margin-right: 2px;
+          }
+        }
+        p + p {
+          margin-top: 0.1rem;
+        }
+      }
+    }
+    .content-bottom {
+      width: 100%;
+      position: absolute;
+      top: 1.9rem;
+      padding: 0.25rem;
+      .block-title {
+        width: 90%;
+        margin: 0.5rem auto 0.2rem auto;
+        font-size: 0.24rem;
+        color: $selectfontcolor;
+      }
+      .block-1 {
+        .card {
+          width: 90%;
+          border-radius: 5px;
+          margin: 0 auto;
+          .van-cell {
+            border-radius: 5px;
+          }
+          .title {
+            display: flex;
+            margin-top: 0.15rem;
+            .title-left {
+              flex: 1;
+              display: flex;
+              align-items: center;
+              margin-right: 0.3rem;
+              img {
+                width: 0.9rem;
+              }
+            }
+            .title-right {
+              flex: 5;
+              display: flex;
+              flex-direction: column;
+              .title-right-top {
+                display: flex;
+                justify-content: space-between;
+                .card-type {
+                  font-size: 0.24rem;
+                }
+              }
+              .title-right-bottom {
+                letter-spacing: 1.5px;
+                font-size: 0.34rem;
+              }
+            }
+          }
+          .van-divider {
+            margin: 0.25rem 0;
+            border-color: $defaultfontcolor;
+          }
+          .label {
+            display: flex;
+            flex-direction: column;
+            margin: 0.25rem 0;
+            height: 0.25rem;
+            .card-tip {
+              color: $defaultfontcolor;
+              font-size: 0.2rem;
+              text-align: center;
+            }
+          }
+        }
+      }
+      .block-qr {
+        .code-title {
+          font-family: "微软雅黑 Bold", "微软雅黑 Regular", 微软雅黑, sans-serif;
+          font-weight: 700;
+          font-style: normal;
+          font-size: 12px;
+          text-align: center;
+          margin-top: 16px;
+        }
+        .code-img {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+  .info {
+    width: 100%;
+    height: 100%;
+    padding: 0.4rem;
+    background: $gray;
+    .content-middle {
+      border-bottom-right-radius: 0.15rem;
+      border-bottom-left-radius: 0.15rem;
+      position: relative;
+      bottom: 4px;
+      padding: 0.25rem 0.4rem 0.1rem 0.4rem;
+      .block {
+        .block-title {
+          font-size: 0.24rem;
+          color: $defaultfontcolor;
+          margin-bottom: 0.25rem;
+        }
+        .block-text {
+          font-size: 0.3rem;
+          color: $selectfontcolor;
+        }
+      }
+      .block + .block {
+        margin: 0.2rem 0;
+      }
+    }
+    .btn-group {
+      margin: 0.3rem 0;
+    }
+  }
+  /* login 弹层 */
+  .upload-pop {
+    width: 80%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    .upload {
+      width: 100%;
+      height: 100%;
+      padding: 0.4rem;
+      background: $gray;
+      .content-middle {
+        border-bottom-right-radius: 0.15rem;
+        border-bottom-left-radius: 0.15rem;
+        position: relative;
+        bottom: 4px;
+        padding: 0.5rem 0.2rem 0 0.2rem;
+        .block {
+          position: relative;
+          .block-title {
+            font-size: 0.24rem;
+            color: $defaultfontcolor;
+            margin-bottom: 0.25rem;
+            text-align: center;
+          }
+          .block-text {
+            font-size: 0.3rem;
+            color: $selectfontcolor;
+          }
+          .step-img {
+            width: 1.8rem;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            /* 相对于元素的自身宽高进行平移 */
+            transform: translate(-50%, -50%);
+          }
+          .block-point {
+            display: inline-block;
+            font-size: 0.3rem;
+            color: $white;
+            background-color: $selectPurple;
+            border-radius: 0.6rem;
+            padding: 0 0.1rem;
+            text-align: center;
+            height: 0.6rem;
+            width: 0.6rem;
+            line-height: 0.6rem;
+          }
+          .block-point.disabled {
+            font-size: 0.3rem;
+            color: $white;
+            background-color: $defaultfontcolor;
+          }
+        }
+        .block + .block {
+          margin: 0.2rem 0;
+        }
+        .flex {
+          display: flex;
+          justify-content: space-between;
+          width: 75%;
+          margin: 0.2rem auto !important;
+        }
+      }
+      .btn-group {
+        margin: 0.3rem 0;
+        .btn {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+/* receipt - start */
+
+/* sign 竖屏 - start */
+
+.sign-1 {
+  width: 100%;
+  height: 100%;
+  .content {
+    height: calc(100% - 127px);
+    .board {
+      height: 100%;
+      overflow: hidden;
+      border-radius: 5px;
+      box-shadow: 0 0 6px $lightgray;
+      canvas {
+        border-radius: 5px;
+      }
+    }
+  }
+  .btn-group {
+    position: relative;
+    bottom: 45%;
+    left: -20%;
+    transform: rotate(90deg);
+  }
+  .btn-group2 {
+    position: relative;
+    bottom: 48%;
+    left: -35%;
+    transform: rotate(90deg);
+    font-size: 0.2rem;
+  }
+  .van-dialog {
+    background-color: $gray;
+  }
+  .tel {
+    padding: 0.4rem 0.3rem 0 0.3rem;
+    .content {
+      width: 85%;
+      margin: 0.5rem auto 0 auto;
+      .tel-group {
+        display: flex;
+        align-items: center;
+        .van-cell {
+          padding: 10px;
+        }
+        .tel-country {
+          width: 65%;
+        }
+        .tel-country::after {
+          border-bottom: none;
+        }
+        .van-field__left-icon {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .van-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+              width: 0.47rem;
+              height: 0.32rem;
+              margin-right: 0.25rem;
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+      .line {
+        margin: 0;
+        display: inline-block;
+        height: 0.4rem;
+        width: 2px;
+        vertical-align: middle;
+        position: relative;
+        background: $defaultfontcolor;
+      }
+      .input-label {
+        margin: 0.4rem auto 0.2rem auto;
+        color: $defaultfontcolor;
+        font-size: 0.26rem;
+      }
+      .van-cell-group {
+        border-radius: 5px;
+        box-shadow: none;
+        border: 1px solid transparent;
+        box-shadow: 0 0 6px $lightgray;
+      }
+    }
+    .btn-group {
+      position: relative;
+      bottom: 0;
+      left: 0;
+      transform: rotate(0deg);
+    }
+  }
+}
+
+/* sign 竖屏 - end */
+
+/* sign 横屏 - start */
+
+.sign-2 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  .header {
+    width: 1.7rem;
+    height: 100%;
+    position: relative;
+    left: 0;
+    border-top-right-radius: 0.15rem;
+    border-bottom-left-radius: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.15rem;
+    margin: 0;
+    .step {
+      padding: 0;
+      position: relative;
+      bottom: 5px;
+      .step-block {
+        height: 0.5rem;
+        width: 0.5rem;
+      }
+      span {
+        top: 0.73rem;
+      }
+    }
+    .point {
+      padding: 0;
+      img {
+        height: 3px;
+      }
+    }
+  }
+  .content {
+    width: calc(100% - 1.7rem);
+    padding: 0.2rem;
+    box-sizing: border-box;
+    .board {
+      height: 100%;
+      overflow: hidden;
+      border-radius: 5px;
+      box-shadow: 0 0 6px $lightgray;
+      canvas {
+        border-radius: 5px;
+      }
+    }
+  }
+  .btn-group {
+    width: 77%;
+    position: absolute;
+    bottom: 0;
+    left: 1.7rem;
+    .btn-m {
+      font-size: 0.2rem;
+      height: 0.5rem;
+      line-height: 0.5rem;
+      width: 38%;
+    }
+  }
+  .btn-group2 {
+    width: calc(100% - 1.5rem);
+    position: absolute;
+    bottom: 0.25rem;
+    right: 0;
+    text-align: center;
+    font-size: 0.13rem;
+  }
+  .van-dialog {
+    background-color: $gray;
+  }
+  .tel {
+    // padding: 0.1rem 0.1rem 0 0.1rem;
+    .content {
+      width: 90%;
+      margin: 0 auto 0 auto;
+      .tel-group {
+        display: flex;
+        align-items: center;
+        .van-cell {
+          padding: 10px;
+        }
+        .tel-country {
+          width: 65%;
+        }
+        .tel-country::after {
+          border-bottom: none;
+        }
+        .van-field__left-icon {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .van-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+              width: 0.47rem;
+              height: 0.32rem;
+              margin-right: 0.25rem;
+              vertical-align: middle;
+            }
+          }
+        }
+        margin-bottom: 8px;
+      }
+      .line {
+        margin: 0;
+        display: inline-block;
+        height: 0.4rem;
+        width: 2px;
+        vertical-align: middle;
+        position: relative;
+        background: $defaultfontcolor;
+      }
+      .input-label {
+        margin: 0.1rem auto 0.1rem auto;
+        color: $defaultfontcolor;
+        font-size: 0.26rem;
+      }
+      .van-cell-group {
+        border-radius: 5px;
+        box-shadow: none;
+        border: 1px solid transparent;
+        box-shadow: 0 0 6px $lightgray;
+      }
+      .btn-group-dialog {
+        .btn-m {
+          font-size: 0.2rem;
+          width: 100%;
+          height: 1rem;
+          background-color: $selectPurple;
+          border-radius: 5px;
+          margin: 0 auto;
+          color: $white;
+          text-align: center;
+          line-height: 1rem;
+        }
+      }
+    }
+  }
+}
+
+/* sign 横屏 - end */
+
+/* accept - start */
+
+.accept {
+  width: 100%;
+  height: auto;
+  overflow-y: auto;
+  background-image: url(../image/header-4.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 0.6rem;
+  .content {
+    .content-top {
+      background-color: #fff;
+      border-top-right-radius: 0.15rem;
+      border-top-left-radius: 0.15rem;
+      padding-top: 0.3rem;
+      text-align: center;
+      position: relative;
+      top: 1px;
+      .content-icon {
+        height: 1.1rem;
+        width: 1.1rem;
+        border-radius: 0.3rem;
+        background-color: $selectYellow;
+        margin: 0.2rem auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          width: 0.56rem;
+        }
+      }
+      .content-text {
+        text-align: center;
+        font-size: 0.3rem;
+      }
+    }
+    .content-divider {
+      img {
+        width: 100%;
+      }
+    }
+    .content-middle {
+      background-color: #fff;
+      border-bottom-right-radius: 0.15rem;
+      border-bottom-left-radius: 0.15rem;
+      position: relative;
+      bottom: 4px;
+      padding: 0.15rem 0.5rem 0 0.5rem;
+      .block {
+        margin: 0.2rem 0;
+        .block-title {
+          font-size: 0.24rem;
+          color: $defaultfontcolor;
+          margin-bottom: 0.25rem;
+        }
+        .block-text {
+          font-size: 0.3rem;
+          color: $selectfontcolor;
+        }
+      }
+      .block + .block {
+        margin: 0.5rem 0;
+      }
+      .notice {
+        margin-top: 0.5rem;
+        .notice-title {
+          font-size: 0.24rem;
+          color: $defaultfontcolor;
+          margin-bottom: 0.25rem;
+        }
+        .notice-text {
+          color: $selectfontcolor;
+          font-size: 0.2rem;
+        }
+      }
+    }
+    .content-bottom {
+      width: 100%;
+      font-size: 0.36rem;
+      color: #ffffff;
+      text-align: center;
+      margin-top: 0.2rem;
+    }
+  }
+}
+
+/* accept - end */
+
+/* order - start */
+
+.order {
+  width: 100%;
+  height: 100%;
+  .content {
+    .content-top {
+      width: 100%;
+      height: 3.26rem;
+      background-image: url(../image/header-2.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      border-bottom-right-radius: 0.15rem;
+      border-bottom-left-radius: 0.15rem;
+      padding-top: 0.2rem;
+      .content-info {
+        color: #fff;
+        padding: 0.3rem 0.5rem;
+        .info-num {
+          font-size: 0.48rem;
+        }
+        .info-text {
+          font-size: 0.24rem;
+        }
+        p + p {
+          margin-top: 0.1rem;
+        }
+      }
+    }
+    .content-bottom {
+      width: 100%;
+      position: absolute;
+      top: 1.7rem;
+      padding: 0.25rem;
+      .block-title {
+        width: 90%;
+        margin: 0.5rem auto 0.2rem auto;
+        font-size: 0.24rem;
+        color: $selectfontcolor;
+      }
+      .block-1 {
+        .card {
+          width: 90%;
+          border-radius: 5px;
+          margin: 0 auto;
+          .van-cell {
+            border-radius: 5px;
+          }
+          .title {
+            display: flex;
+            margin-top: 0.15rem;
+            .title-left {
+              flex: 1;
+              display: flex;
+              align-items: center;
+              margin-right: 0.3rem;
+              img {
+                width: 0.9rem;
+              }
+            }
+            .title-right {
+              flex: 5;
+              display: flex;
+              flex-direction: column;
+              .title-right-top {
+                display: flex;
+                justify-content: space-between;
+                .card-type {
+                  font-size: 0.24rem;
+                }
+              }
+              .title-right-bottom {
+                letter-spacing: 1.5px;
+                font-size: 0.34rem;
+              }
+            }
+          }
+          .van-divider {
+            margin: 0.25rem 0;
+            border-color: $defaultfontcolor;
+          }
+          .label {
+            display: flex;
+            flex-direction: column;
+            margin: 0.25rem 0;
+            height: 0.25rem;
+            .info-address {
+              color: $defaultfontcolor;
+              font-size: 0.2rem;
+              .van-icon {
+                margin-right: 2px;
+              }
+            }
+          }
+        }
+      }
+      .block-2 {
+        .card {
+          width: 90%;
+          border-radius: 5px;
+          margin: 0 auto;
+          .van-cell {
+            border-radius: 5px;
+          }
+          .title {
+            .card-tip {
+              display: block;
+              color: $defaultfontcolor;
+              font-size: 0.24rem;
+              text-align: left;
+            }
+            .card-group {
+              display: flex;
+              .card-tip {
+                flex: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* order - end */
+
+/* orderp pc页面样式 - start */
+
+.orderp {
+  width: 40%;
+  height: 100%;
+  margin: 0 auto;
+  .content {
+    .content-top {
+      width: 100%;
+      height: 2.5rem;
+      background-image: url(../image/header-2.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      // background-attachment: fixed;
+      background-size: cover;
+      border-bottom-right-radius: 0.15rem;
+      border-bottom-left-radius: 0.15rem;
+      padding-top: 0.2rem;
+      .content-info {
+        color: #fff;
+        padding: 0.3rem 0.5rem;
+        .info-num {
+          font-size: 0.3rem;
+        }
+        .info-text {
+          font-size: 0.2rem;
+        }
+        p + p {
+          margin-top: 0.1rem;
+        }
+      }
+    }
+    .content-bottom {
+      width: 100%;
+      position: relative;
+      bottom: 1.2rem;
+      padding: 0.25rem;
+      .block-title {
+        width: 90%;
+        margin: 0.2rem auto;
+        font-size: 0.24rem;
+        color: $selectfontcolor;
+      }
+      .block-1 {
+        .card {
+          width: 90%;
+          border-radius: 5px;
+          margin: 0 auto;
+          .van-cell {
+            border-radius: 5px;
+          }
+          .title {
+            display: flex;
+            margin-top: 0.15rem;
+            .title-left {
+              flex: 1;
+              display: flex;
+              align-items: center;
+              margin-right: 0.3rem;
+              img {
+                width: 0.7rem;
+                margin: 0 auto;
+              }
+            }
+            .title-right {
+              flex: 5;
+              display: flex;
+              flex-direction: column;
+              .title-right-top {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 0.1rem;
+                .card-type {
+                  font-size: 0.2rem;
+                }
+              }
+              .title-right-bottom {
+                letter-spacing: 1.5px;
+                font-size: 0.2rem;
+              }
+            }
+          }
+          .van-divider {
+            margin: 0.25rem 0;
+            border-color: $defaultfontcolor;
+          }
+          .label {
+            display: flex;
+            flex-direction: column;
+            margin: 0.25rem 0;
+            height: 0.25rem;
+            .info-address {
+              color: $defaultfontcolor;
+              font-size: 0.2rem;
+              .van-icon {
+                margin-right: 2px;
+              }
+            }
+          }
+        }
+      }
+      .block-2 {
+        .card {
+          width: 90%;
+          border-radius: 5px;
+          margin: 0 auto;
+          .van-cell {
+            border-radius: 5px;
+            padding: 0.2rem;
+          }
+          .title {
+            .card-tip {
+              display: block;
+              color: $defaultfontcolor;
+              font-size: 0.2rem;
+              text-align: left;
+            }
+            .card-group {
+              display: flex;
+              .card-tip {
+                flex: 1;
+                p {
+                  margin: 0.1rem 0;
+                  font-size: 0.2rem !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* orderp pc页面样式 - end */
+
+/* orderList - start */
+
+.orderList {
+  width: 100%;
+  height: 100%;
+  .content {
+    padding: 0.5rem 0.5rem 0 0.5rem;
+    .block {
+      .block-title {
+        margin: 0.25rem 0;
+      }
+      .card {
+        margin-bottom: 0.5rem;
+        border-radius: 5px;
+        .van-cell {
+          border-radius: 5px;
+          .title {
+            display: flex;
+            justify-content: space-between;
+            .title-left {
+              .card-address {
+                color: $defaultfontcolor;
+                font-size: 0.2rem;
+                .van-icon {
+                  margin-right: 2px;
+                }
+              }
+              .card-money {
+                font-size: 0.36rem;
+                margin: 0.1rem 0;
+              }
+              .card-num {
+                color: $defaultfontcolor;
+                font-size: 0.2rem;
+              }
+            }
+            .title-right {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              text-align: right;
+              .num {
+                font-size: 0.36rem;
+                color: $selectPurple;
+              }
+              .num-text {
+                color: $defaultfontcolor;
+                font-size: 0.2rem;
+                line-height: 15px;
+              }
+            }
+          }
+          .van-divider {
+            margin: 0.2rem 0;
+          }
+          .label {
+            display: flex;
+            justify-content: space-between;
+          }
+        }
+      }
+    }
+    .blank {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      padding: 0.3rem;
+      display: flex;
+      justify-content: center;
+      .text {
+        position: absolute;
+        top: 3rem;
+        img {
+          width: 50%;
+        }
+        p {
+          font-size: 0.3rem;
+          margin-top: 0.3rem;
+        }
+      }
+    }
+  }
+}
+
+/* orderList - end */
+
+/* orderInfo - start */
+
+.orderInfo {
+  width: 100%;
+  height: 100%;
+  .content {
+    .content-top {
+      width: 100%;
+      height: 3.26rem;
+      background-image: url(../image/header-2.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      border-bottom-right-radius: 0.15rem;
+      border-bottom-left-radius: 0.15rem;
+      .content-info {
+        display: flex;
+        justify-content: space-between;
+        color: #fff;
+        padding: 0.5rem;
+        font-size: 0.24rem;
+        .left {
+          flex: 1;
+        }
+        .right {
+          flex: 1.5;
+        }
+        .num {
+          font-size: 0.48rem;
+        }
+      }
+    }
+    .content-bottom {
+      width: 100%;
+      position: absolute;
+      top: 2rem;
+      padding: 0.25rem;
+      .block-title {
+        width: 90%;
+        margin: 0.5rem auto 0.2rem auto;
+        font-size: 0.24rem;
+        color: $selectfontcolor;
+      }
+      .card {
+        width: 90%;
+        border-radius: 5px;
+        margin: 0 auto;
+        .van-cell {
+          border-radius: 5px;
+          margin-bottom: 0.2rem;
+          padding: 0.3rem;
+        }
+        .title {
+          display: flex;
+          .title-left {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin-right: 0.3rem;
+            .step-block {
+              height: 1rem;
+              width: 1rem;
+              margin: 0 auto;
+              background-color: $selectYellow;
+              border-radius: 5px;
+              img {
+                position: relative;
+                top: 30%;
+                width: 55%;
+              }
+              .img-receipt {
+                top: 25%;
+                width: 44%;
+              }
+              .img-sign {
+                top: 32%;
+                width: 44%;
+              }
+            }
+          }
+          .title-right {
+            flex: 5;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            .card-type {
+              font-size: 0.3rem;
+            }
+            .title-right-bottom {
+              letter-spacing: 1.5px;
+              font-size: 0.34rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* orderInfo - start */
+
+/* elf-component - start */
+
+.elf-component {
+  .elf {
+    width: 1rem;
+    height: 1rem;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 0 0.15rem 0.15rem 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 70%;
+      background-color: #fff;
+    }
+  }
+
+  .van-popup {
+    font-size: 0.24rem;
+    .content {
+      height: 100%;
+      padding: 0.3rem;
+      .title {
+        font-size: 0.3rem;
+        margin: 0 auto 0.3rem auto;
+        text-align: center;
+      }
+      .group {
+        padding: 0.3rem;
+        .row {
+          display: flex;
+          margin: 0.5rem auto;
+          .icon-block {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 0.1rem;
+            border-radius: 5px;
+
+            img {
+              width: 50%;
+            }
+          }
+          .text-block {
+            display: flex;
+            align-items: center;
+            width: 72%;
+          }
+        }
+      }
+    }
+  }
+
+  /* lang 弹层 */
+  .lang {
+    width: 100%;
+    height: 100%;
+    padding: 0.4rem;
+    background: $gray;
+    .van-radio-group {
+      width: 100%;
+      margin: 0 auto;
+      .van-cell-group {
+        border-radius: 5px;
+        .van-cell {
+          border-radius: 5px;
+          padding: 14px 20px;
+          .van-cell__title {
+            color: $defaultfontcolor;
+          }
+        }
+        .van-radio__icon--checked .van-icon {
+          color: #fff;
+          background-color: $selectPurple;
+          border-color: $selectPurple;
+        }
+      }
+      .van-cell-group + .van-cell-group {
+        margin-top: 0.2rem;
+      }
+      img {
+        position: relative;
+        bottom: 0.03rem;
+        width: 0.47rem;
+        height: 0.32rem;
+        // background: red;
+        margin-right: 0.25rem;
+        vertical-align: middle;
+        border: 1px solid $gray;
+      }
+    }
+    .agree {
+      margin: 30px auto 0 auto;
+      .van-checkbox {
+        justify-content: center;
+        .van-checkbox__icon {
+          font-size: 14px;
+        }
+        .van-checkbox__label {
+          color: $defaultfontcolor;
+          font-size: 14px;
+        }
+      }
+      .agree-link {
+        color: $selectPurple;
+      }
+    }
+    .btn-group {
+      position: relative;
+      top: 10px;
+      padding: 0;
+      margin-bottom: 0.2rem;
+      margin-top: 0;
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+
+  /* login 弹层 */
+  .login-pop {
+    width: 80%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    .content {
+      padding: 0.2rem;
+      height: auto !important;
+      .content-top {
+        margin-top: 1rem;
+        .title {
+          font-size: 0.5rem;
+          text-align: center;
+        }
+        .radio {
+          margin: 0.5rem 0;
+          display: flex;
+          justify-content: center;
+          .van-radio-group {
+            // text-align: center;
+            // margin: 0 auto;
+            // width: 65%;
+            // justify-content: space-between;
+
+            text-align: center;
+            margin: 0 auto;
+            width: 69%;
+            display: flex;
+            justify-content: space-between;
+            /* flex-direction: column; */
+            flex-wrap: wrap;
+            .van-radio {
+              display: flex;
+              align-items: center;
+              overflow: hidden;
+              cursor: pointer;
+              user-select: none;
+              margin-bottom: 0.1rem;
+            }
+            .van-radio__label {
+              text-align: left;
+            }
+            .van-radio--horizontal {
+              margin-right: 0;
+            }
+            .van-radio__label {
+              color: $defaultfontcolor;
+            }
+            .van-radio__icon .van-icon {
+              border: 1px solid $selectPurple;
+            }
+          }
+        }
+        .input {
+          .tel {
+            padding: 0 0.3rem;
+            .tel-group {
+              display: flex;
+              align-items: center;
+              .van-cell {
+                padding: 10px;
+              }
+              .tel-country {
+                width: 65%;
+              }
+              .tel-country::after {
+                border-bottom: none;
+              }
+              .van-field__left-icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .van-icon {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  img {
+                    width: 0.47rem;
+                    height: 0.32rem;
+                    margin-right: 0.25rem;
+                    vertical-align: middle;
+                  }
+                }
+              }
+            }
+            .line {
+              margin: 0;
+              display: inline-block;
+              height: 0.4rem;
+              width: 2px;
+              vertical-align: middle;
+              position: relative;
+              background: $defaultfontcolor;
+            }
+            .input-label {
+              margin: 0.4rem auto 0.2rem auto;
+              color: $defaultfontcolor;
+              font-size: 0.26rem;
+            }
+            .van-cell-group {
+              border-radius: 5px;
+              border: 1px solid transparent;
+              box-shadow: 0 0 6px $lightgray;
+            }
+            .code-group {
+              display: flex;
+              box-shadow: none;
+              background: transparent;
+              .van-cell {
+                flex: 1;
+                margin-right: 0.2rem;
+                border-radius: 5px;
+                box-shadow: 0 0 6px $lightgray;
+              }
+              .van-button {
+                flex: 1;
+                border: 1px solid $selectYellow;
+                color: $selectfontcolor;
+                background-color: $selectYellow;
+                border-radius: 5px;
+                box-shadow: 0 0 6px $lightgray;
+              }
+            }
+          }
+          .tel + .tel {
+            margin-top: 0.2rem;
+          }
+        }
+      }
+    }
+  }
+
+  /* about 弹层 */
+  .about-pop {
+    width: 80%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    .content {
+      font-size: 0.24rem;
+      padding: 0.3rem;
+      .block {
+        padding: 0.25rem;
+        .title {
+          color: $selectfontcolor;
+          margin-bottom: 0.15rem;
+          font-weight: 600;
+          text-align: left !important;
+          font-size: 0.24rem !important;
+        }
+        .label {
+          color: $defaultfontcolor;
+          text-align: left;
+        }
+        .point {
+          display: list-item;
+          list-style-type: disc;
+          margin-left: 15px;
+        }
+        .text {
+          color: #171717;
+          text-align: justify;
+        }
+        .img {
+          img {
+            width: 100%;
+            height: 3rem;
+            background-color: #eee;
+          }
+        }
+      }
+    }
+  }
+
+  /* suggestions弹层 */
+  .suggestions-pop {
+    width: 80%;
+    height: 100%;
+    background-color: $gray;
+    border-radius: 5px;
+    .content {
+      padding: 0.5rem;
+      .block {
+        .block-title {
+          margin: 0.25rem 0;
+        }
+        .block-text {
+          color: $defaultfontcolor;
+          font-size: 0.24rem;
+          text-align: center;
+          margin-top: 0.2rem;
+          .van-icon {
+            color: $selectPurple;
+            top: 1px;
+          }
+          a {
+            color: $selectPurple;
+            font-size: 0.24rem;
+            text-align: center;
+          }
+        }
+        .block-text + .block-text {
+          margin-top: 0.1rem;
+        }
+      }
+      .field {
+        background-color: #fff;
+        border-radius: 5px;
+        .van-cell {
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+
+  .agreement-dialog {
+    background-color: #fff;
+    .agreement {
+      width: 100%;
+      height: 8.5rem;
+      color: $selectfontcolor;
+      .agreement-content {
+        height: 80%;
+      }
+    }
+  }
+
+  .van-dialog__header {
+    font-size: 24px;
+    padding-top: 10px;
+    .dialog-agreement-title {
+      font-size: 16px;
+    }
+    .dialog-close-icon {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      color: $defaultfontcolor;
+    }
+  }
+}
+
+/* elf-component - end */
+
+/* 横屏 不显示小精灵 */
+@media screen and (min-width: 550px) {
+  #app {
+    .elf {
+      display: none;
+    }
+  }
+}
+
+/* 横屏 提示 - start */
+
+#orientation-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+
+  .icon {
+    display: inline-block;
+    width: 67px;
+    height: 109px;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIYAAADaCAMAAABU68ovAAAAXVBMVEUAAAD29vb////x8fH////////x8fH5+fn29vby8vL////5+fn39/f6+vr////x8fH////////+/v7////09PT////x8fH39/f////////////////////x8fH///+WLTLGAAAAHXRSTlMAIpML+gb4ZhHWn1c2gvHBvq1uKJcC6k8b187lQ9yhhboAAAQYSURBVHja7d3blpowFIDhTUIAOchZDkre/zE7ycySrbUUpsRN2/1fzO18KzEqxEVgTiZNfgmmtxRc8iaR8HNe8x4BtjQePKayYCIoyBSgvNNE1AkNSHqZyLqk97EgUCCHBzZ5mkg7ScvIJuIyOyXBRFxgpqWZyGsAZLB1KjsJi8nutHU4JCRbFRH8tmirI9k8Jx2sqNs8K/m0LQkrktO2crgcgXGB4AiTEsB0hJfo9MGgX7CGcYiYwQxmMOOvZwRhBG8tCoMXjBDeXvWCEcHbi14wgCBmMIMZzGAGM5jxETNwzMAxA8cMHDNwzMAxA8cMHDNwzMAxA8cMHDNwzMAxY6E2rUQxnH2tz9cirlJFwFBJedaPnUv0M7++egPDE8iAJcIDmxwH5wwv9vUviw2kLbVO3TJU5uul/EyB0FoLp4x60PdGUd3qPurrWyjGGTc05u+1dcgI7/+tCCPARWGhH7o5Y7RCf+bH9ctXLp6v2BVDxfqz0oPXeSVaNtINo/1SXDv4dck8IIkbhtC2ol+iouEonTBCbYvVMnXOjxww6s/RFrBUpXHh/gw1rHj5d/qhYn9Gpk2FWh6xRBRX5Oj3Znh2Sq49/L6+y8pB26q9GbE2dbA2mVbx6I+7MfBglLCttm73ZQi7AD3iL4HqjFYJHSPRppqaUaJ3ATpGa+ckpGak2hRRMyqjGMkvl+xyFeSMwjAqcsZgGDdyhl0oNTnDN4yenJGZFGxNChP5/Y3efh6SM2rDOJMzboYxkDMqwyjIGcIw6F+io2FU1IxIm1JqRmgXSkvNKNCXeTpGrU0JNSO2c6LIGPgCS8AuDHz9ta0SXWDtxoDRH+MqlbC2Dt2G2JFRadtQZt2qq/orGowdGb2euxYiqWEpVWhTBnszoNAPdStuQwxqf0aocdWKW4Z+DfszIh8pxJqbuCE4YAC+4bm0evtipjpgJHeFnyyt1Ku2xa0bhjxr27p75rECNwyI9ZwvXkHq+7aTaMEV44YYy/spfgjgjNHaWW+GeUhGEX7tLlVinIFDDSgnOwhi1V6bU0b6tVS9eAERe863g4dRrtiHdc6o+nn5vtyVVgR79Cqt4uL6gfHPQyGqtP2vf7HADGbcYwaOGThm4JiBYwaOGThm4JiBYwaOGThm4JiBYwaOGThm4JiBYwaOGThm4JjhtOM+J/AgT008yDMkN/dPP9hzS8zAMQN3OEYeekp5YU7KOKXwVXqiY+QS7smcinGKABWdiBgpPJTSMHJ4KidhhPBUSMLw4CmPhKHgKUXCkHsygum71ftNSgCX6bsl8FQyfbcL5EdYsDk0R3j7aiA5wpt5AjKg/2gLJEBD/0Hf2OOf/vRrj6z/7GtP4B3nMKyjHA12kIPSjnJs3FEO0TvKkYJHOWCR+rjJH0Vn6fI5PjNbAAAAAElFTkSuQmCC");
+    animation: rotation infinite 3s ease-in-out;
+    background-size: 67px 109px;
+    margin-bottom: 2em;
+    font-size: 0.15rem;
+  }
+
+  p {
+    color: white;
+    font-size: 0.15rem;
+    margin-top: 10px;
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(90deg);
+    }
+    10% {
+      transform: rotate(90deg);
+    }
+    50% {
+      transform: rotate(0);
+    }
+    60% {
+      transform: rotate(0);
+    }
+    90% {
+      transform: rotate(90deg);
+    }
+    100% {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+/* 横屏 提示 - end */
+
+/* seal 出入境章 - start */
+
+.seal {
+  .content-1 {
+    .content-top {
+      color: $selectPurple;
+      text-align: left;
+      padding: 0 0.25rem;
+    }
+    .content-bottom {
+      margin: 0.25rem auto 0 auto;
+      width: 100%;
+      padding: 0 0.15rem;
+      margin: 0 auto;
+      text-align: center;
+      color: $defaultfontcolor;
+      position: relative;
+      bottom: 0.1rem;
+      .grid {
+        .van-grid {
+          .van-grid-item.default {
+            .van-grid-item__content {
+              padding: 0.2rem 0.44rem;
+              justify-content: center;
+              border-radius: 5px;
+              height: 2.64rem;
+              box-shadow: 0 0 6px $lightgray;
+              .grid-top {
+                margin-bottom: 0.2rem;
+                display: block;
+                width: 100%;
+                font-size: 0.24rem;
+                text-align: left;
+                color: $selectfontcolor;
+              }
+              .grid-middle {
+                display: block;
+                width: 100%;
+                font-size: 0.32rem;
+                text-align: left;
+                color: $selectfontcolor;
+              }
+            }
+          }
+          .van-grid-item.blank {
+            .van-grid-item__content {
+              height: 2.64rem;
+              border: 1px $defaultfontcolor dashed;
+              background-color: transparent;
+              color: $selectfontcolor;
+              border-radius: 5px;
+              label {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                .grid-middle {
+                  .url {
+                    height: 2.5rem !important;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* seal - end */
+
+/* date 入境时间 - start */
+
+.date {
+  width: 100%;
+  .content-1 {
+    padding: 0.2rem;
+    .content-top {
+      color: $selectPurple;
+      text-align: center;
+      margin: 0.35rem 0;
+    }
+    .content-bottom {
+      position: relative;
+      bottom: 0 !important;
+      width: 100%;
+      margin: 0.2rem auto 4rem auto;
+      .van-cell-group {
+        border-radius: 5px;
+        .van-cell {
+          border-radius: 5px;
+          .van-field__label {
+            color: $defaultfontcolor;
+          }
+          .van-icon {
+            color: $selectYellow;
+          }
+        }
+      }
+      .van-cell-group + .van-cell-group {
+        margin-top: 0.15rem;
+      }
+    }
+  }
+}
+
+/* date - end */
+
+/* contact - start */
+
+.contact {
+  width: 100%;
+  height: 100%;
+  .content-2 {
+    .content-top {
+      color: $defaultfontcolor;
+      text-align: center;
+      margin: 0.35rem 0;
+    }
+    .content-bottom {
+      width: 85%;
+      margin: 0 auto 4rem auto;
+      .content-top {
+        color: $selectPurple;
+        text-align: left;
+      }
+      .van-cell-group {
+        border-radius: 5px;
+        .van-cell {
+          border-radius: 5px;
+          .van-field__label {
+            color: $defaultfontcolor;
+          }
+          .van-icon {
+            // color: #ef8eb1;
+            color: $selectYellow;
+          }
+        }
+      }
+      .van-cell-group + .van-cell-group {
+        margin-top: 0.15rem;
+      }
+    }
+    .btn-group-follow {
+      position: relative;
+      top: 1%;
+    }
+  }
+
+  /* login 弹层 */
+  .login-pop {
+    width: 80%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    .content {
+      padding: 0.2rem;
+      height: auto !important;
+      .content-top {
+        margin-top: 1rem;
+        .title {
+          font-size: 0.4rem;
+          text-align: center;
+          margin-bottom: 0.5rem;
+        }
+        .input {
+          .tel {
+            padding: 0 0.3rem;
+            .tel-group {
+              display: flex;
+              align-items: center;
+              .van-cell {
+                padding: 10px;
+              }
+              .tel-country {
+                width: 65%;
+              }
+              .tel-country::after {
+                border-bottom: none;
+              }
+              .van-field__left-icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .van-icon {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  img {
+                    width: 0.47rem;
+                    height: 0.32rem;
+                    margin-right: 0.25rem;
+                    vertical-align: middle;
+                  }
+                }
+              }
+            }
+            .line {
+              margin: 0;
+              display: inline-block;
+              height: 0.4rem;
+              width: 2px;
+              vertical-align: middle;
+              position: relative;
+              background: $defaultfontcolor;
+            }
+            .input-label {
+              margin: 0.4rem auto 0.2rem auto;
+              color: $defaultfontcolor;
+              font-size: 0.26rem;
+            }
+            .van-cell-group {
+              border-radius: 5px;
+              border: 1px solid transparent;
+              box-shadow: 0 0 6px $lightgray;
+            }
+            .code-group {
+              display: flex;
+              box-shadow: none;
+              background: transparent;
+              .van-cell {
+                flex: 1;
+                margin-right: 0.2rem;
+                border-radius: 5px;
+                box-shadow: 0 0 6px $lightgray;
+              }
+              .van-button {
+                flex: 1;
+                border: 1px solid $selectYellow;
+                color: $selectfontcolor;
+                background-color: $selectYellow;
+                border-radius: 5px;
+                box-shadow: 0 0 6px $lightgray;
+              }
+            }
+          }
+          .tel + .tel {
+            margin-top: 0.2rem;
+          }
+          .tip {
+            padding: 0 0.3rem;
+            margin: 0.4rem 0 0.2rem 0;
+            color: $selectPurple;
+          }
+        }
+      }
+      .btn-group-follow {
+        margin-top: 0.2rem;
+        .btn-group {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
+.moutn {
+  color: #333 !important;
+  font-weight: 600;
+  font-family: PINGFANGBOLD;
+}
+.filed {
+  .van-field__button {
+    padding-left: 8px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+  }
+  .van-icon {
+    // position: relative;
+    display: inline-block;
+    font: normal normal normal 14px/1 vant-icon;
+    font-size: 0.35rem;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.van-popup__close-icon {
+  position: absolute;
+  z-index: 1;
+  color: #c8c9cc;
+  font-size: 22px;
+  cursor: pointer;
+}
+/* contact - end */
+
+.position {
+  width: 100%;
+  height: 100%;
+  background: $gray;
+  padding: 0.25rem 0.2rem;
+  box-sizing: border-box;
+  .location {
+    width: 100%;
+    height: 1rem;
+    // background: #ccc;
+    border-bottom: 1px solid rgb(215, 215, 215);
+    display: flex;
+    .location-label {
+      font-family: 微软雅黑, sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 0.28rem;
+      letter-spacing: normal;
+      color: rgb(51, 51, 51);
+      line-height: 1rem;
+      margin-right: 0.25rem;
+    }
+    .location-name {
+      font-size: 0.3rem;
+      font-family: "微软雅黑 Bold", "微软雅黑 Regular", 微软雅黑, sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      color: rgb(114, 0, 204);
+      line-height: 1rem;
+      flex: 1;
+    }
+  }
+
+  .manual-position {
+    font-family: 微软雅黑, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.28rem;
+    letter-spacing: normal;
+    color: rgb(51, 51, 51);
+    line-height: 0.5rem;
+    width: 100%;
+  }
+
+  .provinces {
+    min-height: 9rem;
+    .province {
+      .province-label {
+        font-family: 微软雅黑, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 0.28rem;
+        letter-spacing: normal;
+        color: rgb(51, 51, 51);
+        line-height: 0.6rem;
+        width: 100%;
+        border-bottom: 1px solid rgb(215, 215, 215);
+      }
+      .city-button {
+        box-sizing: border-box;
+        padding: 0.1rem 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .van-button--primary {
+          margin: 0.05rem 0;
+          color: #fff;
+          border: 1px solid #7200cc;
+          width: 3rem;
+          background-color: #7200cc;
+          border-radius: 0.12rem;
+        }
+
+        .van-button--plain {
+          background-color: #fff;
+        }
+
+        .van-button--plain.van-button--primary {
+          color: #7200cc;
+        }
+      }
+    }
+  }
+
+  .content-button {
+    margin-top: 1rem;
+    bottom: 0px;
+    height: 1rem;
+    width: 100%;
+    text-align: center;
+    .van-button--primary {
+      color: #fff;
+      background-color: rgba(89, 74, 177, 1);
+      border: 1px solid rgba(89, 74, 177, 1);
+      width: 90%;
+      font-size: 0.3rem;
+      height: 1rem;
+      border-radius: 0.2rem;
+    }
+  }
+}
+
+.taxRefundTypeContainer {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 300;
+  background: #f6f6f6;
+  padding: 50px 30px;
+  box-sizing: border-box;
+
+  .title {
+    border-width: 0px;
+    display: flex;
+    font-family: "微软雅黑 Bold", "微软雅黑 Regular", "微软雅黑", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 16px;
+  }
+
+  .card {
+    position: absolute;
+    border-width: 0px;
+    width: calc(100% - 60px);
+    height: 91px;
+    display: flex;
+    background: inherit;
+    background-color: rgba(255, 255, 255, 1);
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(215, 215, 215, 1);
+    border-radius: 16px;
+    -moz-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.34901960784313724);
+    -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.34901960784313724);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.34901960784313724);
+    padding: 15px 20px;
+    box-sizing: border-box;
+
+    .content {
+      margin-left: 20px;
+      font-family: "微软雅黑 Bold", "微软雅黑 Regular", "微软雅黑", sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .logo-icbc {
+    position: absolute;
+    width: calc(100% - 60px);
+    top: calc(100% - 100px);
+    text-align: center;
+    img {
+      width: 80%;
+      height: 0.75rem;
+      margin: 0 auto;
+    }
+  }
+}
+
+.btn-group-bottom-container {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.btn-group-qr-bottom-container {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 50px;
+
+  .logo-icbc {
+    width: 100%;
+    position: relative;
+    top: auto;
+    text-align: center;
+    img {
+      width: 80%;
+      height: 0.75rem;
+      margin: 0 auto;
+    }
+  }
+}

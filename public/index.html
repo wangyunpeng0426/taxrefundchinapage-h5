@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,viewport-fit=cover"
+    />
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+    <script src="./config.js"></script>
+    <title>Instant Refund</title>
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=rknrbZpD31H5rF5p9b0ngOerkQaRZTJg"></script>
+    <script>
+      window.BMap = BMap;
+    </script>
+    <script src="./hina.min.js"></script>
+    <script>
+      // 创建 SDK 全局对象
+      const hina = window['hinaDataStatistic'];
+      // 用配置对象初始化 SDK
+      hina.init({
+        // 配置采集上报地址URL
+        serverUrl: 'https://higateway.haishuu.com/hn?project=ChinaDeparture&token=Cwg5qg2i',       // 配置采集上报地址URL（在线申请），查看如下【[采集上报地址获取] 链接
+        showLog: false,
+        // 单页面配置，默认开启，若页面中有锚点设计，需要将该配置删除，否则触发锚点会多触发 H_pageview 事件
+        isSinglePage: true,
+        autoTrackConfig: {
+          // 是否开启自动点击采集, true表示开启，自动采集 H_WebClick 事件
+          clickAutoTrack: true,
+          // 是否开启页面停留采集, true表示开启，自动采集 H_WebStay 事件
+          stayAutoTrack: true,
+        },
+        maxStringLength: 10000
+      });
+      hina.quick('autoTrack');
+      // 将 SDK 实例赋给全局变量 hina，或者其他您指定的变量
+      window["hina"] = hina;
+      window.APP_PUBLIC_KEY = 'APP_PUBLIC_KEY_PLACEHOLDER';
+      window.APP_PRIVATE_KEY = 'APP_PRIVATE_KEY_PLACEHOLDER';
+      window.APP_SHOW_CONSOLE = 'APP_SHOW_CONSOLE_PLACEHOLDER';
+      window.APP_WEB_SOCKET_URL = 'APP_WEB_SOCKET_URL_PLACEHOLDER';
+    </script>
+    
+  </head>
+  <body>
+    <noscript>
+      <strong
+        >We're sorry but Instant Refund doesn't work properly without
+        JavaScript enabled. Please enable it to continue.</strong
+      >
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+    <script>
+      window.onload = function () {
+        var lastTouchEnd = 0;
+        document.addEventListener("touchstart", function (event) {
+          if (event.touches.length > 1) {
+            event.preventDefault();
+          }
+        });
+        document.addEventListener(
+          "touchend",
+          function (event) {
+            var now = new Date().getTime();
+            if (now - lastTouchEnd <= 300) {
+              event.preventDefault();
+            }
+            lastTouchEnd = now;
+          },
+          false
+        );
+        document.addEventListener("gesturestart", function (event) {
+          event.preventDefault();
+        });
+        document.addEventListener("dblclick", function (event) {
+          event.preventDefault();
+        });
+      };
+    </script>
+    <!-- <script src="https://dev-newportal.yunupay.com/sohu/cityjson?ie=utf-8"></script> -->
+    <script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
+    <script type="text/javascript">
+            sessionStorage.setItem('ip', returnCitySN["cip"])
+    </script>
+  </body>
+</html>

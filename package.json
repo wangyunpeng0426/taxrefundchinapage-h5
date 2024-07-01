@@ -1,0 +1,42 @@
+{
+  "name": "taxrefund2.0",
+  "version": "2.2.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "compressorjs": "^1.2.1",
+    "core-js": "^3.37.1",
+    "jsbarcode": "^3.11.6",
+    "jsencrypt": "^3.1.0",
+    "qrcode": "^1.5.3",
+    "vant": "^2.12.10",
+    "vconsole": "^3.4.0",
+    "vue": "^2.6.11",
+    "vue-i18n": "^8.24.2",
+    "vue-router": "^3.2.0",
+    "vue-wechat-title": "^2.0.7",
+    "vuex": "^3.4.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^5.0.8",
+    "@vue/cli-plugin-router": "^5.0.8",
+    "@vue/cli-plugin-vuex": "^5.0.8",
+    "@vue/cli-service": "^5.0.8",
+    "compression-webpack-plugin": "^6.1.2",
+    "less": "^4.2.0",
+    "less-loader": "^8.0.0",
+    "postcss": "^8.4.39",
+    "prettier": "^2.2.1",
+    "sass": "^1.26.5",
+    "sass-loader": "^13.0.0",
+    "vue-cli-plugin-vant": "^1.0.1",
+    "vue-loader": "^17.4.2",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^5.92.1"
+  }
+}
